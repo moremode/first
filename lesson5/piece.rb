@@ -16,10 +16,12 @@ class Piece
     end
     
     def pos_x
+        puts "Получение позиции по x"
         return @x
     end
     
     def pos_y
+        puts "Получение позиции по y"
         return @y
     end
     
@@ -46,6 +48,19 @@ class Piece
             y = y
         end
         @y = y
+    end
+    
+    def.get_owner
+        puts "Получение владельца фигуры"
+        return @owner
+    end
+    
+    def info
+       puts "owner - владелец фигуры"
+       puts "x - местонахождение по X"
+       puts "y - местонахождение по Y"
+       puts "type - тип фигуры (пешка, конь, слон...)"
+       puts "defeat - уничтожена ли фигура"
     end
     
 end
