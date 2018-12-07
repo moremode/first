@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div class="all">
+    <div style="height: 1px"></div>
+    <h1 class="header1">Champions</h1>
+    <div class="wins-container">
+      <div class="winner">
+        <img src="<%= image_url((@rands[0] + 1).to_s + '.jpg') %>" alt="">
+        <p><%= @el_names[@rands[0]] %></p>
+        <p><%= @years_life[@rands[0]] %></p>
+        <p><%= @years_wins[@rands[0]] %></p>
+      </div>
+      <div class="winner">
+        <img src="<%= image_url((@rands[1] + 1).to_s + '.jpg') %>" alt="">
+        <p><%= @el_names[@rands[1]] %></p>
+        <p><%= @years_life[@rands[1]] %></p>
+        <p><%= @years_wins[@rands[1]] %></p>
+      </div>
+      <div class="winner">
+        <img src="<%= image_url((@rands[2] + 1).to_s + '.jpg') %>" alt="">
+        <p><%= @el_names[@rands[2]] %></p>
+        <p><%= @years_life[@rands[2]] %></p>
+        <p><%= @years_wins[@rands[2]] %></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

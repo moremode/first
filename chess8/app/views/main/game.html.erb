@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="main">
+  <table id="chess-table">
+    <tr>
+      <td class="whiteF"><img src="<%= image_url("img/black/1.png")%>" alt=""></td>
+      <td class="blackF"><img src="<%= image_url("img/black/2.png")%>" alt=""></td>
+      <td class="whiteF"><img src="<%= image_url("img/black/3.png")%>" alt=""></td>
+      <td class="blackF"><img src="<%= image_url("img/black/5.png")%>" alt=""></td>
+      <td class="whiteF"><img src="<%= image_url("img/black/4.png")%>" alt=""></td>
+      <td class="blackF"><img src="<%= image_url("img/black/3.png")%>" alt=""></td>
+      <td class="whiteF"><img src="<%= image_url("img/black/6.png")%>" alt=""></td>
+      <td class="blackF"><img src="<%= image_url("img/black/1.png")%>" alt=""></td>
+    </tr>
+    <tr>
+      <td class="blackF"><img src="<%= image_url("img/black/7.png")%>" alt=""></td>
+      <td class="whiteF"><img src="<%= image_url("img/black/7.png")%>" alt=""></td>
+      <td class="blackF"><img src="<%= image_url("img/black/7.png")%>" alt=""></td>
+      <td class="whiteF"><img src="<%= image_url("img/black/7.png")%>" alt=""></td>
+      <td class="blackF"><img src="<%= image_url("img/black/7.png")%>" alt=""></td>
+      <td class="whiteF"><img src="<%= image_url("img/black/7.png")%>" alt=""></td>
+      <td class="blackF"><img src="<%= image_url("img/black/7.png")%>" alt=""></td>
+      <td class="whiteF"><img src="<%= image_url("img/black/7.png")%>" alt=""></td>
+    </tr>
+    <tr>
+      <td class="whiteF"><img src="" alt=""></td>
+      <td class="blackF"><img src="" alt=""></td>
+      <td class="whiteF"><img src="" alt=""></td>
+      <td class="blackF"><img src="" alt=""></td>
+      <td class="whiteF"><img src="" alt=""></td>
+      <td class="blackF"><img src="" alt=""></td>
+      <td class="whiteF"><img src="" alt=""></td>
+      <td class="blackF"><img src="" alt=""></td>
+    </tr>
+    <tr>
+      <td class="blackF"><img src="" alt=""></td>
+      <td class="whiteF"><img src="" alt=""></td>
+      <td class="blackF"><img src="" alt=""></td>
+      <td class="whiteF"><img src="" alt=""></td>
+      <td class="blackF"><img src="" alt=""></td>
+      <td class="whiteF"><img src="" alt=""></td>
+      <td class="blackF"><img src="" alt=""></td>
+      <td class="whiteF"><img src="" alt=""></td>
+    </tr>
+    <tr>
+      <td class="whiteF"><img src="" alt=""></td>
+      <td class="blackF"><img src="" alt=""></td>
+      <td class="whiteF"><img src="" alt=""></td>
+      <td class="blackF"><img src="" alt=""></td>
+      <td class="whiteF"><img src="" alt=""></td>
+      <td class="blackF"><img src="" alt=""></td>
+      <td class="whiteF"><img src="" alt=""></td>
+      <td class="blackF"><img src="" alt=""></td>
+    </tr>
+    <tr>
+      <td class="blackF"><img src="" alt=""></td>
+      <td class="whiteF"><img src="" alt=""></td>
+      <td class="blackF"><img src="" alt=""></td>
+      <td class="whiteF"><img src="" alt=""></td>
+      <td class="blackF"><img src="" alt=""></td>
+      <td class="whiteF"><img src="" alt=""></td>
+      <td class="blackF"><img src="" alt=""></td>
+      <td class="whiteF"><img src="" alt=""></td>
+    </tr>
+    <tr>
+      <td class="whiteF"><img src="<%= image_url("img/white/7.png")%>" alt=""></td>
+      <td class="blackF"><img src="<%= image_url("img/white/7.png")%>" alt=""></td>
+      <td class="whiteF"><img src="<%= image_url("img/white/7.png")%>" alt=""></td>
+      <td class="blackF"><img src="<%= image_url("img/white/7.png")%>" alt=""></td>
+      <td class="whiteF"><img src="<%= image_url("img/white/7.png")%>" alt=""></td>
+      <td class="blackF"><img src="<%= image_url("img/white/7.png")%>" alt=""></td>
+      <td class="whiteF"><img src="<%= image_url("img/white/7.png")%>" alt=""></td>
+      <td class="blackF"><img src="<%= image_url("img/white/7.png")%>" alt=""></td>
+    </tr>
+    <tr>
+      <td class="blackF"><img src="<%= image_url("img/white/1.png")%>" alt=""></td>
+      <td class="whiteF"><img src="<%= image_url("img/white/2.png")%>" alt=""></td>
+      <td class="blackF"><img src="<%= image_url("img/white/3.png")%>" alt=""></td>
+      <td class="whiteF"><img src="<%= image_url("img/white/4.png")%>" alt=""></td>
+      <td class="blackF"><img src="<%= image_url("img/white/5.png")%>" alt=""></td>
+      <td class="whiteF"><img src="<%= image_url("img/white/3.png")%>" alt=""></td>
+      <td class="blackF"><img src="<%= image_url("img/white/6.png")%>" alt=""></td>
+      <td class="whiteF"><img src="<%= image_url("img/white/1.png")%>" alt=""></td>
+    </tr>
+  </table>
+  <div id="info">
+    <div id="headmenu">
+      <a href="javascript:void(0)"><div class="headel" onclick="chat()">User</div></a>
+      <div class="headel">Settings</div>
+      <a href="javascript:void(0)"><div class="headel" onclick="players()">Players</div></a>
+    </div>
+    <div class="vsmain">
+      <div class="vs1">Autist</div>
+      <div class="vs"><b>VS</b></div>
+      <div class="vs2"><%= @sample %></div>
+    </div>
+    <div id="chat">
+      <p>Autist: ламповый чатик, который не работет)</p>
+      <p>Кнопки работают, переходим))</p>
+      <input id="chattext" type="text" name="" id="">
+    </div>
+    <div id="players" style="display: none">
+      <%for i in 0..9
+        if @el_names[i] != @sample
+      %>
+        <p><%= @el_names[i]%><b class="years" style="display: none"><%= @years_wins[i]%></b></p>
+      <%end
+      end
+      %>
+    </div>
+  </div>
+</div>
+</body>
+<script type="text/javascript" charset="utf-8">
+  function chat() {
+      document.getElementById('chat').style.display = '';
+      document.getElementById('players').style.display = 'none';
+  }
+
+  function players() {
+      document.getElementById('chat').style.display = 'none';
+      document.getElementById('players').style.display = '';
+  }
+</script>
+</html>
