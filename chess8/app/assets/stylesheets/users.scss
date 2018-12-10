@@ -1,0 +1,100 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.inline-block
+{
+  display: inline-block;
+}
+
+.users-all
+{
+  padding: 20px;
+}
+
+.error-message
+{
+  color: red;
+}
+
+#registration-form-div
+{
+  width: 60%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.registration-form-text
+{
+  width: calc(100% - 24px) !important;
+  font-size: 30px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.registration-form-button
+{
+  font-size: 30px;
+  padding: 20px 75px;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.registration-form-button:hover
+{
+  box-shadow: 0px 10px 20px #B00100;
+  transform: translateY(-10px);
+  transition: 0.3s;
+}
+
+.registration-form-button-div
+{
+  margin-top: 10px;
+  text-align: center;
+}
+
+#last-users-main-div
+{
+  width: calc(40% - 24px);
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.default-user-container-registration
+{
+  width: 100% !important;
+  padding: 20px 10px;
+  font-family: Arial;
+}
+
+.user-profile-container
+{
+  text-align: center;
+  width: calc(90% - 18px);
+  display: inline-block;
+}
+
+.user-profile-picker
+{
+  width: 5%;
+  padding: 50px 0px;
+  text-align: center;
+  background-color: #f7f7f7;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 300px;
+  font-size: 30px;
+  border-radius: 10px;
+  border: 2px solid black;
+  transition: 0.3s;
+}
+
+.user-profile-picker:hover
+{
+  transition: 0.3s;
+  background-color: #f70004;
+  border: 2px solid #f7f7f7;
+  color: #ffffff;
+}

@@ -6,7 +6,7 @@
   width: 65%;
   margin-left: 17.5%;
   background-color: #f7f7f7;
-  min-height: calc(100%);
+  min-height: 100%;
   margin-top: 130px;
 }
 
@@ -45,10 +45,13 @@
 {
   width: 30%;
   display: inline-block;
+  margin-bottom: 10px;
+  transition: 0.3s;
 }
 
 .winner:hover
 {
+  margin-bottom: 0px;
   transform: translateY(-10px);
   border-bottom: 10px solid red;
   transition: 0.3s;
@@ -230,4 +233,60 @@ table td img
 .div-href
 {
   color: black;
+  text-decoration: none;
+}
+
+.user-champ-container
+{
+  position: relative;
+  display: inline-block;
+  width: 15%;
+  padding-left: calc(2.5% - 2px);
+  padding-right: calc(2.5% - 2px);
+  margin-bottom: 30px;
+}
+
+.user-img
+{
+  height: 100px;
+  width: 100%;
+  object-fit: none;
+}
+
+.user-text
+{
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 2px;
+  padding: 5px;
+}
+
+.default-user-container
+{
+  position: relative;
+  font-size: 20px;
+  text-align: center;
+  display: inline-block;
+  width: 25%;
+  background: #d2d2d2;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  padding: 10px 10px;
+  transition: 0.3s;
+}
+
+.default-user-container:hover
+{
+  box-shadow: 0px 10px 20px #B00100;
+  transform: translateY(-10px);
+  transition: 0.3s;
+}
+
+#default-users
+{
+  text-align: center;
 }

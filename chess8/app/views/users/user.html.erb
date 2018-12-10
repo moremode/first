@@ -1,0 +1,39 @@
+<div class="all users-all">
+  <a href="/user?id=<%= @last_id %>" class="div-href">
+    <div class="user-profile-picker">
+      ◀
+    </div>
+  </a>
+  <% if @user.is_champion %>
+
+    <div class="user-profile-container">
+      <h1 class="header1">
+        Да это же <b>Чемпион</b>
+      </h1>
+      <img src="<%= image_url(@user.picture_num) %>" alt="" >
+      <p><%= @all_name %></p>
+      <h3>Годы жизни</h3>
+      <span><%= @user.born_year.to_s + '-' + @user.death_year.to_s %></span>
+      <h3>Годы побед</h3>
+      <span><%= @user.champs_years %></span>
+      <h2><a href="<%= @user.wiki_page %>">Wiki</a></h2>
+    </div>
+
+  <% else %>
+
+    <div class="user-profile-container">
+      <h1 class="header1">
+        Этот пользователь ничем не выделяется, поэтому держите 47 одинаковых spanов его имени))
+      </h1>
+      <% for i in 1..47 do %>
+        <span class="inline-block" style="font-size: 30px"><%= @all_name %></span>
+      <% end %>
+    </div>
+
+  <% end %>
+  <a href="/user?id=<%= @next_id %>" class="div-href">
+    <div class="user-profile-picker">
+      ▶
+    </div>
+  </a>
+</div>

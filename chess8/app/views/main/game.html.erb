@@ -97,7 +97,7 @@
     <div class="vsmain">
       <div class="vs1">Autist</div>
       <div class="vs"><b>VS</b></div>
-      <div class="vs2"><%= @sample %></div>
+      <div class="vs2"><%= User.find(@sample).name + ' ' + User.find(@sample).last_name%></div>
     </div>
     <div id="chat">
       <p>Autist: ламповый чатик, который не работет)</p>
@@ -105,10 +105,10 @@
       <input id="chattext" type="text" name="" id="">
     </div>
     <div id="players" style="display: none">
-      <%for i in 0..9
-        if @el_names[i] != @sample
+      <%for i in 1..10
+        if i != @sample
       %>
-        <p><%= @el_names[i]%><b class="years" style="display: none"><%= @years_wins[i]%></b></p>
+        <p><%= User.find(i).name + ' ' + User.find(i).last_name %><b class="years" style="display: none"><%= User.find(i).champs_years %></b></p>
       <%end
       end
       %>

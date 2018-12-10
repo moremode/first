@@ -1,0 +1,34 @@
+<div class="all users-all">
+  <div id="registration-form-div">
+    <% if @result != '' && @result != nil %>
+    <h2 class="header1 error-message" <% if @result == 'Успешно' %> style="color: green" <% end %>>
+        <%= @result %>
+    </h2>
+    <% end %>
+    <form action="/register/form" id="registration-form-form">
+      <h3>Логин:</h3>
+      <input type="text" name="username" class="registration-form-text">
+      <h3>Ваше имя:</h3>
+      <input type="text" name="name" class="registration-form-text">
+      <h3>Ваша фамилия:</h3>
+      <input type="text" name="last_name" class="registration-form-text">
+      <div class="registration-form-button-div">
+        <input type="submit" value="Зарегистрировать" class="registration-form-button">
+      </div>
+    </form>
+  </div>
+  <div id="last-users-main-div">
+    <h2 class="header1">Последнии регистрации:</h2>
+    <% index = 0 %>
+    <% User.all.reverse_each do |user|%>
+        <% if (index < 5) %>
+          <a href="" class="div-href">
+            <div class="default-user-container default-user-container-registration">
+              <span><%= user.name + ' ' + user.last_name %></span>
+            </div>
+          </a>
+        <% end %>
+        <% index = index + 1 %>
+      <% end %>
+  </div>
+      </div>
