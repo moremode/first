@@ -22,7 +22,7 @@
     <% index = 0 %>
     <% User.all.reverse_each do |user|%>
         <% if (index < 5) %>
-          <a href="" class="div-href">
+          <a href="/user?id=<%= user.id %>" class="div-href">
             <div class="default-user-container default-user-container-registration">
               <span><%= user.name + ' ' + user.last_name %></span>
             </div>
