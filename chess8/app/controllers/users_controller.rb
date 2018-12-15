@@ -100,4 +100,8 @@ class UsersController < ApplicationController
     end
     return true
   end
+
+  def generate
+
+  end
 end

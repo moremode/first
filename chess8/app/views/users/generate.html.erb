@@ -1,0 +1,21 @@
+<div id="generated-users">
+  <% User.all.each do |user| %>
+    <p>user = User.new</p>
+    <% if user.is_champion %>
+      <p>user.username = '<%= user.username %>'</p>
+      <p>user.name = '<%= user.name %>'</p>
+      <p>user.last_name = '<%= user.last_name %>'</p>
+      <p>user.born_year = <%= user.born_year %></p>
+      <p>user.death_year = <%= user.death_year %></p>
+      <p>user.champs_years = '<%= user.champs_years %>'</p>
+      <p>user.picture_num = '<%= user.picture_num %>'</p>
+      <p>user.wiki_page = '<%= user.wiki_page %>'</p>
+    <% else %>
+      <p>user.username = '<%= user.username %>'</p>
+      <p>user.name = '<%= user.name %>'</p>
+      <p>user.last_name = '<%= user.last_name %>'</p>
+    <% end %>
+    <p>user.is_champion = <%= user.is_champion %></p>
+    <p>user.save</p>
+  <% end %>
+</div>

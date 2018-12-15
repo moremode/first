@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   get '/register', to: 'users#home'
   get '/register/form', to: 'users#form'
   get '/user', to: 'users#user'
+  get '/generate', to: 'users#generate'
   root 'main#home'
 end
