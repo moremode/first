@@ -1,0 +1,29 @@
+GOGOGO
+
+<% if @level == 'Admin' %>
+  <p>ADM</p>
+
+  <% User.all.select{|x| x.level_id != 1}.each do |user| %>
+    <p><%= user.username %><button onclick="document.location = '/remove_user?id=<%= user.id %>'">Удалить</button></p>
+    <%= form_for :user do |f| %>
+      <%= hidden_field(:user, :id, value: user.id) %>
+      <%= f.collection_select :level_id, Level.all, :id, :level, selected: user.level_id %>
+      <%= f.submit %>
+    <% end %>
+  <% end %>
+<% elsif @level == 'Teacher' %>
+  <p>Teacher</p>
+  <% User.all.select{|x| x.level_id == 3}.each do |user| %>
+    <p><%= user.username %></p>
+    <%= form_for :point, commit:'GOPON' do |f| %>
+      <%= hidden_field(:point, :id, value: user.id) %>
+      <%= f.select :point, %w(2 3 4 5), selected: 2 %>
+      <%= f.submit value:'Set'%>
+    <% end %>
+  <% end %>
+<% elsif @level == 'Aut'%>
+  <p>AUTIST</p>
+  <% Point.all.select{|x| x.user_id == @user.id}.each do |point| %>
+    <b><%= point.point %> </b>
+  <% end %>
+<% end %>
