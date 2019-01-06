@@ -1,3 +1,180 @@
 // Place all the styles related to the Main controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body, html
+{
+  min-height: 100%;
+}
+
+body
+{
+  min-height: calc(100vh - 16px);
+}
+
+.all
+{
+  position: relative;
+  --width-all: 1380px;
+  width: calc(var(--width-all) - 40px);
+  padding: 20px;
+  background: #fcfcfc;
+  box-shadow: 0px 0px 10px black;
+  margin-left: calc((100% - var(--width-all))/ 2);
+  min-height: calc(100vh - 56px);
+}
+
+/// INSTRUMENTS START
+
+#instrument-exit
+{
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+
+#role-p
+{
+  font-size: 24px;
+  text-align: center;
+  font-family: Arial;
+}
+
+.username-label
+{
+  font-size: 20px;
+}
+
+#table-container
+{
+  text-align: center;
+}
+
+.user-table
+{
+  display: inline-block;
+  border: 2px solid black;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-collapse: collapse;
+}
+
+.user-table td
+{
+
+  font-size: 20px;
+}
+
+.table-button
+{
+  background: #dece00;
+  font-size: 20px;
+  padding: 7px;
+  width: 125px;
+  height: 55px;
+  border: 0px solid black;
+}
+
+.table-button:hover
+{
+  background: #ffe700;
+  transition: 0.3s;
+}
+
+.teacher-container
+{
+  text-align: center;
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.small-teacher-container
+{
+  display: inline-block;
+  border-bottom: 3px solid black;
+  padding: 10px;
+}
+
+.teachers-student-username
+{
+  margin-right: 10px;
+}
+
+#teacher-form
+{
+  display: inline-block;
+}
+
+.teacher-button
+{
+  height: 43px;
+}
+
+.selector-button
+{
+  background: #ebebeb;
+}
+
+.selector-button:hover
+{
+  background: #f8f8f8;
+}
+
+.points-for-teacher
+{
+  margin-top: 10px;
+}
+
+.teachers-student-username:hover .points-for-teacher
+{
+  display: block;
+}
+
+.student-point
+{
+  --size: 20px;
+  font-size: var(--size);
+  display: inline-block;
+  background: #ffe700;
+  padding: calc(var(--size) * 0.64);
+  margin-left: 5px;
+  margin-right: 5px;
+  height: var(--size);
+  width: var(--size);
+  text-align: center;
+}
+
+/// INSTRUMENTS END
+
+/// AUTH START
+
+#auth-form
+{
+  text-align: center;
+}
+
+.auth-text-field
+{
+  font-size: 16px;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+.auth-button
+{
+  transition: 0.5s;
+  background: #dece00;
+  font-size: 20px;
+  border: 0px solid black;
+  padding: 10px 50px;
+}
+
+.auth-button:hover
+{
+  background: #ffe700;
+  transition: 0.5s;
+  border: 0px solid black;
+  padding: 10px 40px;
+}
+
+/// Auth END
+

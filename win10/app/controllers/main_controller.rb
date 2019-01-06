@@ -1,7 +1,9 @@
 class MainController < ApplicationController
 
   def auth
-
+    if (session[:name] != '')
+      redirect_to '/instruments'
+    end
   end
 
   def authpost
@@ -24,21 +26,29 @@ class MainController < ApplicationController
   end
 
   def change_post
-    if (params[:commit] == 'Save User')
+    if (params[:commit] == 'Изменить')
       user = User.find(params[:user][:id])
       user.update_attribute(:level_id, params[:user][:level_id])
       redirect_to('/instruments')
-    elsif (params[:commit] == 'Set')
+    elsif (params[:commit] == 'Поставить')
       point = Point.new
       point.point = params[:point][:point]
       point.user_id = params[:point][:id]
       point.save
+      redirect_to '/instruments'
     end
   end
 
   def destroy
-    User.destroy(params[:id])
+    if (User.find_by_username(session[:name]) != nil && User.find_by_username(session[:name]).level.level == 'Admin')
+      User.destroy(params[:id])
+    end
     redirect_to '/instruments'
+  end
+
+  def exit
+    session[:name] = ''
+    redirect_to '/auth'
   end
 
 end

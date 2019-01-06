@@ -1,29 +1,92 @@
-GOGOGO
 
+<div class="all">
+
+  <div id="instrument-exit">
+    <a class="invisible-href">
+      <button class="table-button" onclick="document.location = '/exit'">Выйти</button>
+    </a>
+  </div>
+
+<p id="role-p">Role:
 <% if @level == 'Admin' %>
-  <p>ADM</p>
-
+    <b> Administrator</b><br><span class="username-label">Username: <b><%= @user.username %></b></span></p>
+  <div id="table-container">
   <% User.all.select{|x| x.level_id != 1}.each do |user| %>
-    <p><%= user.username %><button onclick="document.location = '/remove_user?id=<%= user.id %>'">Удалить</button></p>
+    <table class="user-table">
+      <tr>
+        <td><%= user.username %></td>
+        <td><button class="table-button" onclick="document.location = '/remove_user?id=<%= user.id %>'">Удалить</button></td>
+      </tr>
+      <tr>
     <%= form_for :user do |f| %>
       <%= hidden_field(:user, :id, value: user.id) %>
-      <%= f.collection_select :level_id, Level.all, :id, :level, selected: user.level_id %>
-      <%= f.submit %>
+          <td><%= f.collection_select :level_id, Level.all, :id, :level, {selected: user.level_id}, {class: 'table-button selector-button'}  %></td>
+        <td><%= f.submit value: 'Изменить', class: 'table-button' %></td>
     <% end %>
+      </tr>
+    </table>
   <% end %>
+  </div>
+
 <% elsif @level == 'Teacher' %>
-  <p>Teacher</p>
+
+    <b> Teacher</b><br><span class="username-label">Username: <b><%= @user.username %></b></span></p>
   <% User.all.select{|x| x.level_id == 3}.each do |user| %>
-    <p><%= user.username %></p>
-    <%= form_for :point, commit:'GOPON' do |f| %>
+      <div class="teacher-container">
+        <div class="small-teacher-container">
+      <span class="teachers-student-username" onmouseover="show(<%=user.id%>)" onmouseout="hide(<%=user.id%>)"><%= user.username %></span>
+    <%= form_for :point, :html => {id:'teacher-form'} do |f| %>
       <%= hidden_field(:point, :id, value: user.id) %>
-      <%= f.select :point, %w(2 3 4 5), selected: 2 %>
-      <%= f.submit value:'Set'%>
+      <%= f.select :point, %w(2 3 4 5), {selected: 5}, {class: 'table-button teacher-button selector-button'} %>
+      <%= f.submit value:'Поставить', class: 'table-button teacher-button'%>
     <% end %>
+          <div style="display: none" my="<%=user.id%>" class="points-for-teacher">
+          <% Point.all.select{|x| x.user_id == user.id}.each do |point| %>
+            <span class="student-point"><b><%= point.point %> </b></span>
+          <% end %>
+          </div>
+        </div>
+      </div>
   <% end %>
+
 <% elsif @level == 'Aut'%>
-  <p>AUTIST</p>
+
+    <b> Autist</b><br><span class="username-label">Username: <b><%= @user.username %></b></span></p>
+    <span>Ваши оценки:</span>
   <% Point.all.select{|x| x.user_id == @user.id}.each do |point| %>
-    <b><%= point.point %> </b>
+      <span class="student-point"><b><%= point.point %> </b></span>
   <% end %>
+
 <% end %>
+  </div>
+
+<script>
+  function show(tag)
+  {
+      el = document.getElementsByClassName('points-for-teacher');
+      i = 0;
+      while (i < el.length)
+      {
+          p = el[i].attributes.my.value
+          if (p == tag.toString())
+          {
+              el[i].style.display = 'block';
+          }
+          i++;
+      }
+  }
+
+  function hide(tag)
+  {
+      el = document.getElementsByClassName('points-for-teacher');
+      i = 0;
+      while (i < el.length)
+      {
+          if (el[i].attributes.my.value == tag)
+          {
+              el[i].style.display = 'none';
+          }
+          i++;
+      }
+  }
+</script>
