@@ -10,6 +10,11 @@ Level.create(level: 'Admin')
 Level.create(level: 'Teacher')
 Level.create(level: 'Aut')
 
+Subject.create(name: 'Math')
+Subject.create(name: 'Physics')
+Subject.create(name: 'Russian')
+Subject.create(name: 'Geometry')
+
 User.create(username: 'admin', password: 'admin', level_id: 1)
 User.create(username: 'teacher', password: 'teacher', level_id: 2)
 User.create(username: 'aut1', password: 'aut1', level_id: 3)

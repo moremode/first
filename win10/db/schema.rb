@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_05_181203) do
+ActiveRecord::Schema.define(version: 2019_01_06_093152) do
 
   create_table "levels", force: :cascade do |t|
     t.string "level"
@@ -23,7 +23,15 @@ ActiveRecord::Schema.define(version: 2019_01_05_181203) do
     t.integer "point"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "subject_id"
+    t.index ["subject_id"], name: "index_points_on_subject_id"
     t.index ["user_id"], name: "index_points_on_user_id"
+  end
+
+  create_table "subjects", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

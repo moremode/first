@@ -1,7 +1,7 @@
 class MainController < ApplicationController
 
   def auth
-    if (session[:name] != '')
+    if (User.find_by_username(session[:name]) != nil)
       redirect_to '/instruments'
     end
   end
@@ -34,6 +34,7 @@ class MainController < ApplicationController
       point = Point.new
       point.point = params[:point][:point]
       point.user_id = params[:point][:id]
+      point.subject_id = params[:point][:subject_id]
       point.save
       redirect_to '/instruments'
     end

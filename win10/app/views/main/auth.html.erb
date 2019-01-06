@@ -1,11 +1,9 @@
 <div class="all">
-<% if (session[:name] == '') %>
 <%= form_for :user, :html => {id: 'auth-form'} do |f| %>
   <%= f.text_field :username, class:'auth-text-field', placeholder: 'Username' %>
   <br>
   <%= f.text_field :password, type: 'password', class:'auth-text-field', placeholder: 'Password' %>
   <br>
   <%= f.submit value: 'Войти', class: 'auth-button' %>
-<% end %>
 <% end %>
 </div>
